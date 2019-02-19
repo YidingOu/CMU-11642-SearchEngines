@@ -330,25 +330,16 @@ public class QryParser {
 
       // STUDENT HW2 CODE GOES HERE
       List<Double> weights = new ArrayList<>();
-
-      if (Character.isDigit(queryString.charAt(0))) {
-        String[] array = queryString.split("\\s+");
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < array.length; i++) {
-          if (i % 2 == 0) {
-            weights.add(Double.valueOf(array[i]));
-          } else {
-            sb.append(array[i] + " ");
-          }
-        }
-        queryString = sb.toString().trim();
-      }
-      System.out.println(weights);
-
-      // Now handle the argument (which could be a subquery).
-
       Qry[] qargs = null;
       PopData<String, String> p;
+
+      if (Character.isDigit(queryString.charAt(0))) {
+        String[] array = queryString.split("[ \t\n\r]+", 2);
+        weights.add(Double.valueOf(array[0].trim()));
+        queryString = array[1];
+      }
+
+      // Now handle the argument (which could be a subquery).
 
       if (queryString.charAt(0) == '#') { // Subquery
         p = popSubquery(queryString);
@@ -370,21 +361,15 @@ public class QryParser {
       for (int i = 0; i < qargs.length; i++) {
 
         // STUDENTS WILL NEED TO ADJUST THIS BLOCK TO HANDLE WEIGHTS IN HW2
-
-        queryTree.appendArg(qargs[i]);
-      }
-      if ((queryTree instanceof QrySopWsum || queryTree instanceof QrySopWand) && weights.size() > 0) {
-        double wsum = 0.0;
-        for (double d : weights) {
-          wsum += d;
-        }
         if (queryTree instanceof QrySopWsum) {
-          ((QrySopWsum) queryTree).weights = weights;
-          ((QrySopWsum) queryTree).weight_sum = wsum;
-        } else {
-          ((QrySopWand) queryTree).weights = weights;
-          ((QrySopWand) queryTree).weight_sum = wsum;
+          ((QrySopWsum) queryTree).weights.add(weights.get(i));
+          ((QrySopWsum) queryTree).weight_sum += weights.get(i);
         }
+        if (queryTree instanceof QrySopWand) {
+          ((QrySopWand) queryTree).weights.add(weights.get(i));
+          ((QrySopWand) queryTree).weight_sum += weights.get(i);
+        }
+        queryTree.appendArg(qargs[i]);
       }
     }
 

@@ -1,4 +1,4 @@
-706:#WAND(1.0 Controlling 4.0 type 1.0 II 2.0 diabetes)
-707:#WAND(0.2 Aspirin 0.3 cancer 0.5 prevention)
-708:#WAND(0.3 Decorative 0.3 slate 0.4 sources)
-712:#WAND(0.8 Pyramid 0.2 scheme)
+706:#WSUM(0.3 #AND(Controlling.title diabetes.title) 0.4 #AND(Controlling diabetes) 0.3 #AND(type II diabetes))
+707:#WSUM(2.0 Aspirin.title 1.0 #AND(Aspirin cancer prevention))
+710:#WSUM(0.2 Prostate.body 0.2 treatments.body 0.2 #AND(cancer.title cancer.url cancer.keywords) 0.4 #SYN(treatments cure therapy))
+712:#WSUM(2.0 Pyramid.title 1.0 #AND(Pyramid scheme))
