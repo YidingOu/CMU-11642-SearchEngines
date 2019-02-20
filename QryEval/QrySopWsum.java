@@ -86,13 +86,13 @@ public class QrySopWsum extends QrySop {
   }
 
   public double getDefaultScore(RetrievalModelIndri r, int docid) throws IOException {
-    double sum = 1.0;
+    double score = 0.0;
     for (int i = 0; i < this.args.size(); i++) {
       Qry q = this.args.get(i);
-      double weight = this.weights.get(i);
+      double pow = weights.get(i) / weight_sum;
       double tmp = ((QrySop) q).getDefaultScore(r, docid);
-      sum = sum + ((weight / weight_sum) * tmp);
+      score += tmp * pow;
     }
-    return sum;
+    return score;
   }
 }

@@ -159,9 +159,11 @@ public class QryEval {
           int docid = q.docIteratorGetMatch ();
           // System.out.println(Idx.getInternalDocid("GX000-48-5866977") );
           //System.out.println(Idx.getExternalDocid(0));
-          // if (Idx.getExternalDocid(docid).equals("GX238-00-7580182")) {
+          // if (Idx.getExternalDocid(docid).equals("GX022-93-1111575")) {
           //   System.out.println(docid);
           // }
+
+          //104413  533875
           double score = ((QrySop) q).getScore (model);
           r.add (docid, score);
           q.docIteratorAdvancePast (docid);

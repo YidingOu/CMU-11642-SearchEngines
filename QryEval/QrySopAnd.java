@@ -84,14 +84,17 @@ public class QrySopAnd extends QrySop {
     if (this.docIteratorHasMatchCache()) {
       double score = 1.0;
       double size = 1.0 / this.args.size();
+      // System.out.println(size);
       for (int i = 0; i < this.args.size(); i++) {
         Qry q = this.args.get(i);
         int doc = ((Qry) this).docIteratorGetMatch();
         if (q.docIteratorHasMatch(r) && q.docIteratorGetMatch() == doc) {
           double tmp = ((QrySop) q).getScore(r);
+          // System.out.println("111");
           score *= Math.pow(tmp, size);
         } else {
           double tmp = ((QrySop) q).getDefaultScore(r, doc);
+          // System.out.println(q.getClass().getName());
           score *= Math.pow(tmp, size);
         }
       } 
