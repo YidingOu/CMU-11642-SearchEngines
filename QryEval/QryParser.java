@@ -336,6 +336,7 @@ public class QryParser {
       if (Character.isDigit(queryString.charAt(0))) {
         String[] array = queryString.split("[ \t\n\r]+", 2);
         weights.add(Double.valueOf(array[0].trim()));
+        // System.out.println("debug: " + array[0] + " " + weights.size());
         queryString = array[1];
       }
 
@@ -343,13 +344,13 @@ public class QryParser {
 
       if (queryString.charAt(0) == '#') { // Subquery
         p = popSubquery(queryString);
-        System.out.println("subquery: " + p.getPopped());
+        // System.out.println("subquery: " + p.getPopped());
         qargs = new Qry[1];
         qargs[0] = parseString(p.getPopped());
 
       } else { // Term
         p = popTerm(queryString);
-        System.out.println("term: " + p.getPopped());
+        // System.out.println("term: " + p.getPopped());
         qargs = createTerms(p.getPopped());
 
       }
@@ -366,6 +367,7 @@ public class QryParser {
           ((QrySopWsum) queryTree).weight_sum += weights.get(i);
         }
         if (queryTree instanceof QrySopWand) {
+          // System.out.println("debug: " + weights.size());
           ((QrySopWand) queryTree).weights.add(weights.get(i));
           ((QrySopWand) queryTree).weight_sum += weights.get(i);
         }

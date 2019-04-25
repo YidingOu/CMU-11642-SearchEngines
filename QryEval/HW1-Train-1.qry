@@ -1,10 +1,10 @@
-718: #wand( 0.45 #and( Controlling acid rain ) 0.1 #and( #near/1( acid rain )  #near/1( Controlling acid ) ) 0.45 #and( #window/8( acid rain )  #window/8( Controlling acid ) ) )
-719: #wand( 0.45 #and( Cruise ship damage sea life ) 0.1 #and( #near/1( sea life )  #near/1( damage sea )  #near/1( ship damage )  #near/1( Cruise ship ) ) 0.45 #and( #window/8( sea life )  #window/8( damage sea )  #window/8( ship damage )  #window/8( Cruise ship ) ) )
-724: #wand( 0.45 #and( Iran Contra ) 0.1 #and( #near/1( Iran Contra ) ) 0.45 #and( #window/8( Iran Contra ) ) )
-725: #wand( 0.45 #and( Low white blood cell count ) 0.1 #and( #near/1( cell count )  #near/1( blood cell )  #near/1( white blood )  #near/1( Low white ) ) 0.45 #and( #window/8( cell count )  #window/8( blood cell )  #window/8( white blood )  #window/8( Low white ) ) )
-733: #wand( 0.45 #and( Airline overbooking ) 0.1 #and( #near/1( Airline overbooking ) ) 0.45 #and( #window/8( Airline overbooking ) ) )
-734: #wand( 0.45 #and( Recycling successes ) 0.1 #and( #near/1( Recycling successes ) ) 0.45 #and( #window/8( Recycling successes ) ) )
-735: #wand( 0.45 #and( Afghan women condition ) 0.1 #and( #near/1( women condition )  #near/1( Afghan women ) ) 0.45 #and( #window/8( women condition )  #window/8( Afghan women ) ) )
-741: #wand( 0.45 #and( Artificial Intelligence ) 0.1 #and( #near/1( Artificial Intelligence ) ) 0.45 #and( #window/8( Artificial Intelligence ) ) )
-744: #wand( 0.45 #and( Counterfeit ID punishments ) 0.1 #and( #near/1( ID punishments )  #near/1( Counterfeit ID ) ) 0.45 #and( #window/8( ID punishments )  #window/8( Counterfeit ID ) ) )
-746: #wand( 0.45 #and( Outsource job India ) 0.1 #and( #near/1( job India )  #near/1( Outsource job ) ) 0.45 #and( #window/8( job India )  #window/8( Outsource job ) ) )
+153:pocono
+154:figs
+160:grilling
+165:blue throated hummingbird
+166:computer programming
+170:scooters
+175:signs of a heartattack
+182:quit smoking
+191:churchill downs
+195:pressure washers
